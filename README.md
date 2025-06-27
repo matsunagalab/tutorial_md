@@ -30,6 +30,15 @@ $ python 2_equilibration.py
 $ pytohn 3_production.py
 ```
 
+```
+# extract protein as protein.pdb and protein.dcd
+$ python3 -c "import mdtraj as md; md.load('system.pdb', atom_indices=md.load('system.pdb').topology.select('protein')).save('protein.pdb')"
+$ python3 -c "import mdtraj as md; md.load('3_production.dcd', top='system.pdb', atom_indices=md.load('system.pdb').topology.select('protein')).save('protein.dcd')"
+# extract Ca atoms as ca.pdb and ca.dcd
+$ python3 -c "import mdtraj as md; md.load('system.pdb', atom_indices=md.load('system.pdb').topology.select('name CA')).save('ca.pdb')"
+$ python3 -c "import mdtraj as md; md.load('3_production.dcd', top='system.pdb', atom_indices=md.load('system.pdb').topology.select('name CA')).save('ca.dcd')"
+```
+
 ## Analayze MD trajectory
 
 ```
@@ -37,4 +46,3 @@ $ cd analyze/
 $ vscode ./ # or cursor ./
 # open notebooks in VSCode or Cursor
 ```
-
