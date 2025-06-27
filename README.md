@@ -39,7 +39,7 @@ $ python3 -c "import mdtraj as md; md.load('system.pdb', atom_indices=md.load('s
 $ python3 -c "import mdtraj as md; md.load('3_production.dcd', top='system.pdb', atom_indices=md.load('system.pdb').topology.select('name CA')).save('ca.dcd')"
 ```
 
-## Analayze MD trajectory
+## Analayze MD trajectory with MDTraj
 
 ```
 $ cd analyze/
